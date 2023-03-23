@@ -1,4 +1,4 @@
-﻿namespace HashTable;
+namespace HashTable;
 
 public class KeyValuePair
 {
@@ -40,6 +40,13 @@ public class LinkedList
 
         _last.Next = new LinkedListNode(pair);
         _last = _last.Next;
+        /*
+        _last = _first;
+        while (_last.Next != null)
+            _last = _last.Next;
+        _last.Next = new LinkedListNode(pair);
+        _last = _last.Next;
+        */
     }
 
     public void RemoveByKey(string key)
