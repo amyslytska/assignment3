@@ -6,7 +6,7 @@ internal class Program
     public static void Main(string[] args)
     {
         var dictionary = new Dictionary();
-        var lines = File.ReadAllLines("C:/Users/annmy/RiderProjects/Hash Table/testDict.txt");
+        var lines = File.ReadAllLines("C:/Users/annmy/RiderProjects/Hash Table/dictionary.txt");
         int i = 0;
         foreach (string line in lines)
         {
@@ -20,10 +20,11 @@ internal class Program
         
         Console.WriteLine("Enter a word:");
         string word = Console.ReadLine();
-        string meaning = dictionary.Get(word);
+        string uWord = word.ToUpper();
+        string meaning = dictionary.Get(uWord);
         if (meaning != null)
         {
-            Console.WriteLine($"'{word}' means: {meaning}");
+            Console.WriteLine($"'{word}' - : {meaning}");
         }
         else
         {
