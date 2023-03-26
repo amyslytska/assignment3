@@ -1,6 +1,4 @@
-﻿using Hashtable;
-
-namespace HashTable;
+﻿namespace HashTable;
 using System;
 
 internal class Program
