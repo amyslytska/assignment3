@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace HashTable;
 
 public class KeyValuePair
@@ -24,7 +26,7 @@ public class LinkedListNode
         Next = next;
     }
 }
-public class LinkedList
+public class LinkedList : IEnumerable<KeyValuePair>
 {
     private LinkedListNode _first;
     private LinkedListNode _last;
@@ -90,5 +92,19 @@ public class LinkedList
             current = current.Next;
         }
         return null;
+    }
+
+    public IEnumerator<KeyValuePair> GetEnumerator()
+    {
+        LinkedListNode current = _first;
+        while (current != null)
+        {
+            yield return current.Pair;
+            current = current.Next;
+        }
+    }
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
